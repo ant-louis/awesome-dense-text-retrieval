@@ -22,7 +22,17 @@
 
 ### 1. Approach
 
-#### REALM’s generative process
+- <ins>REALM’s generative process</ins>
+  - For both pre-training and fine-tuning, REALM takes some input *x* and learns a distribution *p(y|x)* over possible outputs *y*.
+  - REALM decomposes *p(y|x)* into two steps: retrieve, then predict. Given an input *x*, they first retrieve possibly helpful documents *z* from a knowledge corpus *Z*. They model this as a sample from the distribution *p(z|x)*. Then, they condition on both the retrieved *z* and the original input *x* to generate the output *y* — modeled as *p(y|z,x)*.
+- <ins>Model architecture</ins>
+  - **Knowledge retriever**
+    - They define the *relevance score* *f(x,z)* between x and z is defined as the inner product of the vector embeddings.
+    - The retrieval distribution *p(z|x)* is then the softmax over all relevance scores.
+    - The vector embeddings are implemented using BERT. For both the input and the documents, they only consider the embedding of the [CLS] token as a “pooled” representation of the sequence. They also reduce the dimensionality of the vectors by performing a linear projection. Note that to encode a document, they pass the document title and body as inputs (separated by the [SEP] token).
 
-- For both pre-training and fine-tuning, REALM takes some input *x* and learns a distribution *p(y|x)* over possible outputs *y*.
-- REALM decomposes *p(y|x)* into two steps: retrieve, then predict. Given an input *x*, they first retrieve possibly helpful documents *z* from a knowledge corpus *Z*. They model this as a sample from the distribution *p(z|x)*. Then, they condition on both the retrieved *z* and the original input *x* to generate the output *y* — modeled as *p(y|z,x)*.
+
+
+
+### 2. 
+
