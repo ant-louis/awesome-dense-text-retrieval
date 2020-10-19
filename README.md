@@ -24,6 +24,7 @@
 ## 📄  Papers <a name="papers"></a>
 
 - [`2020-02`] *REALM: Retrieval-Augmented Language Model Pre-Training*, K. Guu et al. [[pdf]](https://arxiv.org/pdf/2002.08909)[[summary]](summaries/guu2020realm.md)
+- [`2019-03`] *Simple Applications of BERT for Ad Hoc Document Retrieval*, W. Yang et al. [[pdf]](https://arxiv.org/pdf/1903.10972)[[summary]](summaries/yang2019simple.md)
 
 
 ## 🎙  Talks <a name="talks"></a>
