@@ -6,8 +6,6 @@
 1. [Datasets](#datasets)
 2. [Books](#books)
 3. [Papers](#papers)
-    - [Overview](#overview)
-    - [Question-Answering](#qa)
 4. [Talks](#talks)
 5. [Conferences & Workshops](#conferences)
 
@@ -19,19 +17,13 @@
 
 ## 📚  Books <a name="books"></a>
 
+- [`2018-12`] *An Introduction to Neural Information Retrieval*, B. Mitra and N. Craswell [[pdf]](https://www.microsoft.com/en-us/research/uploads/prod/2017/06/fntir2018-neuralir-mitra.pdf)
 - [`2009-04`] *Introduction to Information Retrieval*, C.D. Manning et al. [[link]](https://nlp.stanford.edu/IR-book/)
 
 
 ## 📄  Papers <a name="papers"></a>
 
-### A. Overview <a name="overview"></a>
-
-- [`2018-12`] *An Introduction to Neural Information Retrieval*, B. Mitra and N. Craswell [[pdf]](https://www.microsoft.com/en-us/research/uploads/prod/2017/06/fntir2018-neuralir-mitra.pdf)
-
-
-### B. Question-Answering <a name="qa"></a>
-
-[TO COME]
+- [`2020-02`] *REALM: Retrieval-Augmented Language Model Pre-Training*, K. Guu et al. [[pdf]](https://arxiv.org/pdf/2002.08909)[[summary]](summaries/guu2020realm.md)
 
 
 ## 🎙  Talks <a name="talks"></a>
