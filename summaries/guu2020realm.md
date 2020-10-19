@@ -20,4 +20,9 @@
 
 ***
 
+### 1. Approach
 
+#### REALM’s generative process
+
+- For both pre-training and fine-tuning, REALM takes some input *x* and learns a distribution *p(y|x)* over possible outputs *y*.
+- REALM decomposes *p(y|x)* into two steps: retrieve, then predict. Given an input *x*, they first retrieve possibly helpful documents *z* from a knowledge corpus *Z*. They model this as a sample from the distribution *p(z|x)*. Then, they condition on both the retrieved *z* and the original input *x* to generate the output *y* — modeled as *p(y|z,x)*.
