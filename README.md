@@ -28,7 +28,7 @@
 
 ## 🎙  Talks <a name="talks"></a>
 
-- [`2018-04`] *Neural Models for Information Retrieval*, A. Dyevre. [[video]](https://www.youtube.com/watch?v=g1Pgo5yTIKg)
+- [`2018-04`] *Neural Models for Information Retrieval*, B. Mitra [[video]](https://www.youtube.com/watch?v=g1Pgo5yTIKg)
 
 
 ## 🗓  Conferences & Workshops <a name="conferences"></a>
