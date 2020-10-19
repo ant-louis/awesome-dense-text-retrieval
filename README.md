@@ -26,7 +26,7 @@
 
 ### A. Overview <a name="overview"></a>
 
-- [`2018-12`] *An Introduction to Neural Information Retrieval*, B. Mitra and N. Craswell [[pdf]](https://www.microsoft.com/en-us/research/uploads/prod/2017/06/fntir2018-neuralir-mitra.pdf)[[summary]](./summaries/mitra2018introduction.md)
+- [`2018-12`] *An Introduction to Neural Information Retrieval*, B. Mitra and N. Craswell [[pdf]](https://www.microsoft.com/en-us/research/uploads/prod/2017/06/fntir2018-neuralir-mitra.pdf)
 
 
 ### B. Question-Answering <a name="qa"></a>
