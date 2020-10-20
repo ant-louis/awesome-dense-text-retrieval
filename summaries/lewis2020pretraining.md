@@ -31,8 +31,15 @@
     - (2) The model then computes the **likelihood** of reconstructing each *xi* conditioned on *z1...zM* and each *f(xi,.)*, using a modified **seq2seq model**. The similarity score encourages the model to attend more to relevant evidence documents. Backpropagating the reconstruction loss therefore improves both the sequence-to-sequence model and the relevance model.
     - (3) They construct batches so that evidence documents are relevant to the targets, using the relevance model for retrieval.
   - Training this model is a **chicken-and-egg problem**, as the reconstruction and relevance models cannot be effectively updated if the batches do not contain relevant evidence documents, but batch construction relies on a relevance model. However, they found that, in practice, the model is able to learn from a **random initialization**.
-- <ins>(1) Relevance scores</ins>
+- (1) <ins>Relevance scores</ins>
   - To learn the relevance scores *f(xi,zj)* for a pair of documents, they train a **document encoder** *g* that maps a list of tokens to a fixed size representation.
   - They apply the **same encoder** to both the target and evidence document, and take the **cosine similarity** between their representations. Note that using the same encoder for both the target and evidence documents allows even random models to compute meaningful similarity functions, as documents with higher lexical overlap are more likely to be projected to more similar representations (this is crucial at initialization).
   - They encode documents by taking the representation of the **first token** from the top of a **4-layer Transformer**.
+- (2) <ins>Reconstruction Model</ins>
+  - Given a set of evidence documents *z1...zM* and similarity scores *f(xi,zj)*, the reconstruction model computes the likelihood of target document *xi*.
+  - This provides an auto-encoder loss where the reconstruction of document *xi* is indirectly conditioned on *xi*, but with an intermediate bottleneck provided by the retrieved documents and relevance scores.
+  - First, the input documents are encoded individually with a bidirectional Transformer, and then the resulting embeddings are concatenated.
+  - Then, instead of computing a matrix of cross-attention probabilities between all elements of target document *xi* and evidence document *zj* like in the standard Transformer sequence-to-sequence model, they compute cross-attention over a set of evidence documents *z1...zM*, biasing the attention scores with the document relevant score.
+- (3) <ins>Batch Construction</ins>
+  - Batches are constructed to create evidence document sets *z1...zM* that give useful information for reconstructing target documents *x1...xN*.
   
