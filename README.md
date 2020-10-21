@@ -25,6 +25,7 @@
 
 - [`2020-06`] *Pre-training via Paraphrasing*, M. Lewis et al. 😍 [[pdf]](https://arxiv.org/pdf/2006.15020)[[summary]](summaries/lewis2020pretraining.md)
 - [`2020-02`] *REALM: Retrieval-Augmented Language Model Pre-Training*, K. Guu et al. 😍 [[pdf]](https://arxiv.org/pdf/2002.08909)[[summary]](summaries/guu2020realm.md)
+- [`2019-11`] *Generalization through Memorization: Nearest Neighbor Language Models*, U. Khandelwal et al. [[pdf]](https://arxiv.org/pdf/1911.00172)[[summary]](summaries/khandelwal2019generalization.md)
 - [`2019-03`] *Simple Applications of BERT for Ad Hoc Document Retrieval*, W. Yang et al. [[pdf]](https://arxiv.org/pdf/1903.10972)[[summary]](summaries/yang2019simple.md)
 
 
