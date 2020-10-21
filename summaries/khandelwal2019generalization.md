@@ -38,3 +38,11 @@ tion, including the original LM training data.
   - Then, the model queries the datastore with *f(x)* to retrieve its k-nearest neighbors *N* according to a distance function *d(.,.)*. Note that the datastore contains an entry for each target in the training set, which for LMs can be up to billions of examples. To search over this large datastore, they use FAISS, an open source library for fast nearest neighbor retrieval in high dimensional spaces. the FAISS index is created using 1M randomly sampled keys to learn 4096 cluster centroids (keys are quantized to 64-bytes for efficiency). During inference, they retrieve k=1024 neighbors, and the index looks up 32 cluster centroids while searching for the nearest neighbors. They found in preliminary experiments that using **L2 distance** for FAISS retrieval results in better performance for NN-LM, compared to inner product distance.
   - Then, it computes a distribution over neighbors *p<sub>kNN</sub>* based on a softmax of their negative.
   - Finally, they interpolate the nearest neighbor distribution *p<sub>kNN</sub>* with the model distribution *p<sub>LM</sub>* using a tuned parameter *lambda* to produce the final kNN-LM distribution: *p(y|x) = lambda *p<sub>kNN</sub>(y|x)* + (1-lambda) p<sub>LM</sub>(y|x)*
+
+
+#### Interesting results
+
+- <ins>Question: can retrieving nearest neighbors from data be a substitute for training on it?</ins>
+  - To test this, they train a LM on WIKI-100M and use it to build a datastore from WIKI-3B, a corpus 30 times larger than the training set.
+  - As expected, the model trained on 3B tokens dramatically outperforms the model trained on 100M tokens, improving perplexity from 19.59 to 15.17. However, adding nearest neighbors retrieval over those 3B examples to the model trained on 100M tokens improves perplexity from 19.59 to 13.73; i.e. *retrieving nearest neighbors from the corpus outperforms training on it*.
+  - This result suggests that rather than training language models on ever larger datasets, we can use smaller datasets to learn representations and augment them with kNN-LM over a large corpus.
