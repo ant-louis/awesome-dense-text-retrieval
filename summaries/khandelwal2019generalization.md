@@ -28,3 +28,7 @@ tion, including the original LM training data.
 
 - Language models (LMs) assign probabilities to sequences. Given a context sequence of tokens *c<sub>t</sub>=(w<sub>1</sub>,...,w<sub>t-1</sub>)*, autoregressive LMs estimate *p(w<sub>t</sub>|c<sub>t</sub>)*, the distribution over the target token *w<sub>t</sub>*.
 - The kNN-LM involves augmenting such a pre-trained LM with a nearest neighbors retrieval mechanism, without any additional training (the representations learned by the LM remain unchanged). This can be done with a single forward pass over a text collection (potentially including the original LM training set), where the resulting context-target pairs are stored in a key-value datastore that is queried during inference.
+- <ins>Datastore</ins>
+  - Let *f(.)* be the function that maps a context *c* to a fixed-length vector representation computed by the pre-trained LM.
+  - Then, given the *i*-th training example *(c<sub>i</sub>,w<sub>i</sub>)* in *D*, they define the key-value pair *(k<sub>i</sub>,v<sub>i</sub>)*, where the key *k<sub>i</sub>* is the vector representation of the context *f(c<sub>i</sub>)* and the value *v<sub>i</sub>* is the target word *w<sub>i</sub>*.
+  - The datastore *(K,V)* is thus the set of all key-value pairs constructed from all the training examples in *D*.
