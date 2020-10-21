@@ -32,3 +32,8 @@ tion, including the original LM training data.
   - Let *f(.)* be the function that maps a context *c* to a fixed-length vector representation computed by the pre-trained LM.
   - Then, given the *i*-th training example *(c<sub>i</sub>,w<sub>i</sub>)* in *D*, they define the key-value pair *(k<sub>i</sub>,v<sub>i</sub>)*, where the key *k<sub>i</sub>* is the vector representation of the context *f(c<sub>i</sub>)* and the value *v<sub>i</sub>* is the target word *w<sub>i</sub>*.
   - The datastore *(K,V)* is thus the set of all key-value pairs constructed from all the training examples in *D*.
+- <ins>Inference</ins>
+  - At test time, given the input context *x* the model generates the output distribution over next words *p<sub>LM</sub>(y|x)* and the context representation *f(x)*.
+  - Then, the model queries the datastore with *f(x)* to retrieve its k-nearest neighbors *N* according to a distance function *d(.,.)* (squared L2 distance in their experiments, making the similarity function an RBF kernel).
+  - Then, it computes a distribution over neighbors *p<sub>kNN</sub>* based on a softmax of their negative.
+  - Finally, they interpolate the nearest neighbor distribution *p<sub>kNN</sub>* with the model distribution *p<sub>LM</sub>* using a tuned parameter *lambda* to produce the final kNN-LM distribution: *p(y|x) = lambda *p<sub>kNN</sub>(y|x)* + (1-lambda) p<sub>LM</sub>(y|x)*
