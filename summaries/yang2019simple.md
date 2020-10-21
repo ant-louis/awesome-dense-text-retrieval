@@ -1,4 +1,4 @@
-##
+## Simple Applications of BERT for Ad Hoc Document Retrieval
 
 +++++++++++++++++++++++++++++++  
 <ins>Authors</ins>: W. Yang et al.  
