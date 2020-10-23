@@ -42,7 +42,7 @@ tion, including the original LM training data.
 
 #### Interesting results
 
-- <ins>Question: can retrieving nearest neighbors from data be a substitute for training on it?</ins>
+- <ins>Can retrieving nearest neighbors from data be a substitute for training on it?</ins>
   - To test this, they train a LM on WIKI-100M and use it to build a datastore from WIKI-3B, a corpus 30 times larger than the training set.
   - As expected, the model trained on 3B tokens dramatically outperforms the model trained on 100M tokens, improving perplexity from 19.59 to 15.17. However, adding nearest neighbors retrieval over those 3B examples to the model trained on 100M tokens improves perplexity from 19.59 to 13.73; i.e. *retrieving nearest neighbors from the corpus outperforms training on it*.
   - This result suggests that rather than training language models on ever larger datasets, we can use smaller datasets to learn representations and augment them with kNN-LM over a large corpus.
