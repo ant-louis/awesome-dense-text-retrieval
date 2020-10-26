@@ -52,7 +52,7 @@
 
 ### 2. Data
 
-- They rely on three types of data:
+- <ins>Three types of data</ins>
   1. Wikipedia that serves as their knowledge source for finding answers;
   2. the SQuAD dataset which is their main resource to train *Document Reader*;
   3. three more QA datasets (CuratedTREC, WebQuestions and WikiMovies) that in addition to SQuAD, are used to test the open-domain QA abilities of their full system.
@@ -65,3 +65,23 @@
       - All paragraphs shorter than 25 or longer than 1500 characters;
       - Any paragraph that does not contain named entities detected in the question.
     - For every remaining paragraph in each retrieved page, they score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window, keeping up to the top 5 paragraphs with the highest overlaps (if there is no paragraph with non-zero overlap, the example is discarded).
+
+
+### 3. Experiments
+- <ins>Finding Relevant Articles</ins>
+  - They examine the performance of their *Document Retriever* module on all the QA datasets.
+  - Specifically, they compute the ratio of questions for which the text span of any of their associated answers appear in at least one the top 5 relevant pages returned by the system.
+  - Results: their simple approach outperforms Wikipedia Search, especially with bigram hashing.
+  - They also compare doing retrieval with Okapi **BM25** or by using **cosine distance** in the word embeddings space (by encoding questions and articles as bag-of-embeddings), both of which they find performed worse.
+- <ins>Reader Evaluation on SQuAD</ins>
+  - Their system (single model) can achieve 70.0% exact match and 79.0% F1 scores on the test set, which surpasses all the published results and can match the top performance on the SQuAD leader board at the time of writing. Additionally, they think that their model is conceptually simpler than most of the existing systems.
+  - They also conducted an ablation analysis on the feature vector of paragraph tokens and showed that all the features contribute to the performance of their final system.
+-<ins>Full Wikipedia Question Answering</ins>
+  - They assess the performance of their full system *DrQA* for answering open-domain questions.
+  - They compare three versions of *DrQA* depending on the training sources provided to *Document Reader* (*Document Retriever* remains the same for each case):
+    - SQuAD: A single Document Reader model is trained on the SQuAD training set only and used on all evaluation sets;
+    - Fine-tune: A Document Reader model is pre-trained on SQuAD and then fine-tuned for each dataset independently using its distant supervision (DS) training set;
+    - Multi-task: A single Document Reader model is jointly trained on the SQuAD training set and all the DS sources.
+  - Results:
+    - The single model trained only on SQuAD is outperformed on all four of the datasets by the multitask model that uses distant supervision.
+    - The majority of the improvement from SQuAD to Multitask (DS) however is likely not from task transfer as fine-tuning on each dataset alone using DS also gives improvements, showing that is is the introduction of extra data in the same domain that helps.
