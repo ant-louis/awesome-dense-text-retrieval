@@ -48,3 +48,20 @@
   - At the paragraph level, the goal is to predict the span of tokens that is most likely the correct answer.
   - They take the the paragraph vectors and the question vector as input, and simply train two classifiers independently for predicting the two ends of the span (*start* and *end*). Specifically, they compute the probabilities of each token being *start* and *end*.
   - During prediction, they choose the best span from token *i* to token *i'* such that *i <= i' <= i+15* and *P<sub>start</sub>(i) x P<sub>end</sub>(i')* is maximized.
+
+
+### 2. Data
+
+- They rely on three types of data:
+  1. Wikipedia that serves as their knowledge source for finding answers;
+  2. the SQuAD dataset which is their main resource to train *Document Reader*;
+  3. three more QA datasets (CuratedTREC, WebQuestions and WikiMovies) that in addition to SQuAD, are used to test the open-domain QA abilities of their full system.
+- <ins>Distantly Supervised Data</ins>
+  - CuratedTREC, WebQuestions and WikiMovies only contain question-answer pairs, and not an associated document or paragraph as in SQuAD, and hence cannot be used for training *Document Reader* directly.
+  - Consequently, they use a procedure to automatically associate paragraphs to such training examples, and then add these examples to their training set:
+    - First, they run *Document Retriever* on the question to retrieve the top 5 Wikipedia articles.
+    - Then are discarded:
+      - All paragraphs from those articles without an exact match of the known answer;
+      - All paragraphs shorter than 25 or longer than 1500 characters;
+      - Any paragraph that does not contain named entities detected in the question.
+    - For every remaining paragraph in each retrieved page, they score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window, keeping up to the top 5 paragraphs with the highest overlaps (if there is no paragraph with non-zero overlap, the example is discarded).
