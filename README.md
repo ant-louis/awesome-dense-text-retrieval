@@ -23,7 +23,7 @@
 - [`2019-03`] *Simple Applications of BERT for Ad Hoc Document Retrieval*, W. Yang et al. [[pdf]](https://arxiv.org/pdf/1903.10972)[[summary]](summaries/yang2019simple.md)
 
 
-## Additional resources <a name="additional"></a>
+## ➕ Additional resources <a name="additional"></a>
 
 ### Information Retrieval <a name="ir"></a>
 
