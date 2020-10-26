@@ -1,4 +1,4 @@
-# Up-to-date Natural Language Processing (NLP)
+# Up-to-date NLP
 
 
 ### Table of contents
