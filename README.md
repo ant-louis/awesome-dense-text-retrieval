@@ -1,4 +1,4 @@
-# Information Retrieval
+# Up-to-date Natural Language Processing (NLP)
 
 
 ### Table of contents
