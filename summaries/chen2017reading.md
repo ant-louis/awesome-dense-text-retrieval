@@ -76,7 +76,7 @@
 - <ins>Reader Evaluation on SQuAD</ins>
   - Their system (single model) can achieve 70.0% exact match and 79.0% F1 scores on the test set, which surpasses all the published results and can match the top performance on the SQuAD leader board at the time of writing. Additionally, they think that their model is conceptually simpler than most of the existing systems.
   - They also conducted an ablation analysis on the feature vector of paragraph tokens and showed that all the features contribute to the performance of their final system.
--<ins>Full Wikipedia Question Answering</ins>
+- <ins>Full Wikipedia Question Answering</ins>
   - They assess the performance of their full system *DrQA* for answering open-domain questions.
   - They compare three versions of *DrQA* depending on the training sources provided to *Document Reader* (*Document Retriever* remains the same for each case):
     - SQuAD: A single Document Reader model is trained on the SQuAD training set only and used on all evaluation sets;
