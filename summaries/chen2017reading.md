@@ -21,6 +21,8 @@
   2. *Document Reader*, a multi-layer **recurrent neural network** (RNN) machine comprehension model trained to detect answer spans in those few returned documents.
 - Their experiments show that *Document Retriever* outperforms the built-in Wikipedia search engine (ElasticSearch) and that *Document Reader* reaches state-of-the-art results on the very competitive SQuAD benchmark.
 
+![Model illustration](images/DrQA.png)
+
 ***
 
 ### 1. Approach
