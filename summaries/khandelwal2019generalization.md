@@ -26,7 +26,7 @@ tion, including the original LM training data.
 
 ***
 
-#### Nearest Neighbor Language Modeling
+### Nearest Neighbor Language Modeling
 
 - Language models (LMs) assign probabilities to sequences. Given a context sequence of tokens *c<sub>t</sub>=(w<sub>1</sub>,...,w<sub>t-1</sub>)*, autoregressive LMs estimate *p(w<sub>t</sub>|c<sub>t</sub>)*, the distribution over the target token *w<sub>t</sub>*.
 - The kNN-LM involves augmenting such a pre-trained LM with a nearest neighbors retrieval mechanism, without any additional training (the representations learned by the LM remain unchanged). This can be done with a single forward pass over a text collection (potentially including the original LM training set), where the resulting context-target pairs are stored in a key-value datastore that is queried during inference.
@@ -42,7 +42,7 @@ tion, including the original LM training data.
   - Finally, they interpolate the nearest neighbor distribution *p<sub>kNN</sub>* with the model distribution *p<sub>LM</sub>* using a tuned parameter *lambda* to produce the final kNN-LM distribution: *p(y|x) = lambda *p<sub>kNN</sub>(y|x)* + (1-lambda) p<sub>LM</sub>(y|x)*
 
 
-#### Interesting results
+### Interesting results
 
 - <ins>Can retrieving nearest neighbors from data be a substitute for training on it?</ins>
   - To test this, they train a LM on WIKI-100M and use it to build a datastore from WIKI-3B, a corpus 30 times larger than the training set.
