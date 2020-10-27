@@ -25,16 +25,16 @@
 
 ***
 
-### 1. Approach
+## Approach
 
-#### Document Retriever
+### Document Retriever
 
 - They use an efficient (non-machine learning) document retrieval system to first narrow their search space and focus on reading only articles that are likely to be relevant.
 - A simple **inverted index lookup** followed by **term vector model scoring** performs quite well on this task for many question types. Specifically, articles and questions are compared as **TF-IDF** weighted bag-of-word vectors. They further improve their system by taking local word order into account with n-gram features (their best performing system uses bigram counts).
 - They use *Document Retriever* as the first part of their full model, by setting it to return 5 Wikipedia articles given any question. Those articles are then processed by *Document Reader*.
 
 
-#### Document Reader
+### Document Reader
 
 - Given a question *q* consisting of *l* tokens *{q1,...,ql}* and a document or a small set of documents of *n* paragraphs where a single paragraph consists of *m* tokens, they develop an **RNN** model that they apply to each paragraph in turn and then finally aggregate the predicted answers.
 - <ins>Paragraph encoding</ins>
@@ -52,7 +52,7 @@
   - During prediction, they choose the best span from token *i* to token *i'* such that *i <= i' <= i+15* and *P<sub>start</sub>(i) x P<sub>end</sub>(i')* is maximized.
 
 
-### 2. Data
+## Data
 
 - <ins>Three types of data</ins>
   1. Wikipedia that serves as their knowledge source for finding answers;
@@ -69,7 +69,7 @@
     - For every remaining paragraph in each retrieved page, they score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window, keeping up to the top 5 paragraphs with the highest overlaps (if there is no paragraph with non-zero overlap, the example is discarded).
 
 
-### 3. Experiments
+## Experiments
 - <ins>Finding Relevant Articles</ins>
   - They examine the performance of their *Document Retriever* module on all the QA datasets.
   - Specifically, they compute the ratio of questions for which the text span of any of their associated answers appear in at least one the top 5 relevant pages returned by the system.
