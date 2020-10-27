@@ -21,9 +21,11 @@
 - Overall, their pre-trained models **capture** elements of traditional paraphrasing, translation, multidocument summarization, and information retrieval tasks **without** any fine tuning. This allows effective **zero-shot learning** in many cases and provides a step towards pre-trained models that can perform any task with little or no fine-tuning.
 - With fine-tuning, they achieve **competitive** performance with masked language models on a range of discriminate and generative tasks in many languages, making MARGE the most **generally applicable** pre-training method to date.
 
+![Model illustration](images/MARGE.png)
+
 ***
 
-#### Model overview
+### Model overview
 - During pre-training, the input to the model is a batch of **evidence** documents *z1...zM* and **target** documents *x1...xN*. The model is trained to maximize the likelihood of the targets, conditioned on the evidence documents, and the relevance of each evidence document to each target:
   - (1) The model first computes a **relevance score** *f(xi,zj)* between every pair of documents *xi* and *zi*, by embedding each document and computing their **cosine similarities**.
   - (2) The model then computes the **likelihood** of reconstructing each *xi* conditioned on *z1...zM* and each *f(xi,.)*, using a modified **seq2seq model**. The similarity score encourages the model to attend more to relevant evidence documents. Backpropagating the reconstruction loss therefore improves both the sequence-to-sequence model and the relevance model.
