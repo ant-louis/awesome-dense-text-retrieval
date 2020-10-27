@@ -22,6 +22,8 @@
 tion, including the original LM training data.
 - They also show that the approach has implications for efficientl scaling up to larger training sets and allows for effective domain adaptation, by simply varying the nearest neighbor datastore. Training a model on 100-million tokens and using kNN search over a 3-billion token dataset can outperform training the same model on all 3-billion tokens, opening a new path for efficiently using large datasets in language models.
 
+![Model illustration](images/kNN-LM.png)
+
 ***
 
 #### Nearest Neighbor Language Modeling
