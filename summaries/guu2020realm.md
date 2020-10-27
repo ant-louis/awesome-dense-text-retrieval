@@ -18,6 +18,8 @@
 - The key intuition of their Retrieval-Augmented Language Model (REALM) is to train the retriever using a performance-based signal from unsupervised text: a retrieval that improves the language model’s perplexity is helpful and should be rewarded, while an uninformative retrieval should be penalized.
 - They demonstrate the effectiveness of REALM by fine-tuning on the challenging task of Open-domain Question Answering (Open-QA), and outperform all previous methods by a significant margin (4-16% absolute accuracy).
 
+![Model illustration](images/REALM.png)
+
 ***
 
 ### Approach
@@ -43,7 +45,7 @@
     - Their solution is to “refresh” the index by asynchronously re-embedding and re-indexing all documents every several hundred training steps.
     - They asynchronously refresh the MIPS index by running two jobs in parallel: a primary trainer job, which performs gradient updates on the parameters, and a secondary index builder job, which embeds and indexes the documents.
     - During training, the trainer sends the index builder a snapshot of its parameters. The trainer then continues to train while the index builder uses the updated parameters to construct a new index in the background. As soon as the index builder is done, it sends the new index back to the trainer, and the process repeats.
-    - While asynchronous refreshes can be used for both pretraining and fine-tuning, in our experiments we only use it for pre-training. For fine-tuning, they just build the MIPS index once (using the pre-trained weights) for simplicity.
+    - While asynchronous refreshes can be used for both pretraining and fine-tuning, in their experiments they only use it for pre-training. For fine-tuning, they just build the MIPS index once (using the pre-trained weights) for simplicity.
   - **Injecting inductive biases into pre-training**
     - **Salient span masking**: During REALM pre-training, they want to focus on examples *x* that require world knowledge to predict the masked tokens. To that end, they mask salient spans (such as “United Kingdom” or “July 1969”) that were identified in advance using a BERT-based tagger trained on CoNLL-2003 data. They show that this significantl outperforms other masking strategies.
     - **Null document**: they add an empty null document to the top k retrieved documents, allowing to consider the cases when no retrieval is necessary.
