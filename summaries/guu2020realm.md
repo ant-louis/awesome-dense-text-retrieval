@@ -6,23 +6,22 @@
 <ins>Tags</ins>: `language model`, `neural knowledge retriever`   
 +++++++++++++++++++++++++++++++  
 
+![Model illustration](images/REALM.png)
 
-### Intro
+## Intro
 
 - Language model pre-training has been shown to capture a surprising amount of world knowledge, crucial for NLP tasks such as question answering. However, this knowledge is stored implicitly in the parameters of the underlying neural network. This makes it difficult to determine what knowledge is stored in the network and where. Furthermore, storage space is limited by the size of the network—to capture more world knowledge, one must train ever-larger networks, which can be prohibitively slow or expensive.
 
 
-### Contributions
+## Contributions
 
 - To capture knowledge in a more modular and interpretable way, they augment language model pre-training with a latent knowledge retriever, which allows the model to retrieve and attend over documents from a large corpus (such as Wikipedia), used during pre-training, fine-tuning and inference.
 - The key intuition of their Retrieval-Augmented Language Model (REALM) is to train the retriever using a performance-based signal from unsupervised text: a retrieval that improves the language model’s perplexity is helpful and should be rewarded, while an uninformative retrieval should be penalized.
 - They demonstrate the effectiveness of REALM by fine-tuning on the challenging task of Open-domain Question Answering (Open-QA), and outperform all previous methods by a significant margin (4-16% absolute accuracy).
 
-![Model illustration](images/REALM.png)
-
 ***
 
-### Approach
+## 1. Approach
 
 - <ins>REALM’s generative process</ins>
   - For both pre-training and fine-tuning, REALM takes some input *x* and learns a distribution *p(y|x)* over possible outputs *y*.
@@ -53,7 +52,7 @@
     - **Initialization**: At the beginning of training, if the retriever does not have good embeddings for the input phrase and the documents, the retrieved documents *z* will likely be unrelated to *x*. This causes the knowledge augmented encoder to learn to ignore the retrieved documents. Once this occurs, the knowledge retriever does not receive a meaningful gradient and cannot improve, creating a vicious cycle. To avoid this cold-start problem, they warm-start the embeddings using a simple training objective known as the **Inverse Cloze Task (ICT)** where, given a sentence, the model is trained to retrieve the document where that sentence came from. For the knowledge-augmented encoder, they warm-start it with BERT pre-training — specifically, the uncased BERT-base model.
 
 
-### Results
+## 2. Results
 
 - REALM outperform all previous approaches by a significant margin.
 - The generative Open-QA systems based on T5 are surprisingly powerful, but comes at significant computational cost (from Base to 11B, the model is 50 times larger, and gains roughly 5 points in accuracy). In contrast, REALM outperforms the largest T5-11B model while being 30 times smaller.
