@@ -25,7 +25,7 @@
 
 ***
 
-## Approach
+## 1. Approach
 
 ### Document Retriever
 
@@ -52,7 +52,7 @@
   - During prediction, they choose the best span from token *i* to token *i'* such that *i <= i' <= i+15* and *P<sub>start</sub>(i) x P<sub>end</sub>(i')* is maximized.
 
 
-## Data
+## 2. Data
 
 - <ins>Three types of data</ins>
   1. Wikipedia that serves as their knowledge source for finding answers;
@@ -69,7 +69,7 @@
     - For every remaining paragraph in each retrieved page, they score all positions that match an answer using unigram and bigram overlap between the question and a 20 token window, keeping up to the top 5 paragraphs with the highest overlaps (if there is no paragraph with non-zero overlap, the example is discarded).
 
 
-## Experiments
+## 3. Experiments
 - <ins>Finding Relevant Articles</ins>
   - They examine the performance of their *Document Retriever* module on all the QA datasets.
   - Specifically, they compute the ratio of questions for which the text span of any of their associated answers appear in at least one the top 5 relevant pages returned by the system.
