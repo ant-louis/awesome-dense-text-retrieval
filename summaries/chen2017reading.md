@@ -6,22 +6,22 @@
 <ins>Tags</ins>: `tf-idf`, `lstm`     
 +++++++++++++++++++++++++++++++  
 
+![Model illustration](images/DrQA.png)
 
-### Intro
+
+## Intro
 
 - This paper considers the problem of answering factoid questions in an open-domain setting using Wikipedia as the unique knowledge source.
 - Using Wikipedia articles as the knowledge source causes the task of question answering (QA) to combine the challenges of both large-scale open-domain QA and of machine comprehension of text.
 - In order to answer any question, one must first retrieve the few relevant articles among more than 5 million items, and then scan them carefully to identify the answer. They term this setting, **machine reading at scale** (MRS).
 
 
-### Contributions
+## Contributions
 
 - They develop DrQA, a strong system for question answering from Wikipedia composed of: 
   1. *Document Retriever*, a module using **bigram hashing** and **TF-IDF** matching designed to, given a question, efficiently return a subset of relevant articles;
   2. *Document Reader*, a multi-layer **recurrent neural network** (RNN) machine comprehension model trained to detect answer spans in those few returned documents.
 - Their experiments show that *Document Retriever* outperforms the built-in Wikipedia search engine (ElasticSearch) and that *Document Reader* reaches state-of-the-art results on the very competitive SQuAD benchmark.
-
-![Model illustration](images/DrQA.png)
 
 ***
 
