@@ -1,4 +1,4 @@
-## Latent Retrieval forWeakly Supervised Open Domain Question Answering
+# Latent Retrieval forWeakly Supervised Open Domain Question Answering
 
 +++++++++++++++++++++++++++++++  
 <ins>Authors</ins>: K. Lee et al.  
@@ -7,12 +7,12 @@
 +++++++++++++++++++++++++++++++  
 
 
-### Intro
+## Intro
 
 - 
 
 
-### Contributions
+## Contributions
 
 - 
 
