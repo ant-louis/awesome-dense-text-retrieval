@@ -29,9 +29,13 @@
 
 - They propose an end-to-end model where the retriever and reader components are jointly learned.
 - Models define a scoring function *S(b,s,q)* indicating the goodness of an answer derivation *(b,s)* given a question *q*. Typically, this scoring function
-is decomposed over a retrieval component *S<sub>retr</sub>(b,q)* and a reader component *S<sub>read</sub>(b,s,q)*: *S(b,s,q)* = *S<sub>retr</sub>(b,q)* + *S<sub>read</sub>(b,s,q)*.
+is decomposed over a retrieval component *S<sub>retr</sub>(b,q)* and a reader component *S<sub>read</sub>(b,s,q)*: *S(b,s,q) = S<sub>retr</sub>(b,q) + S<sub>read</sub>(b,s,q)*. Here, all scoring components are derived from **BERT**.
+- During inference, the model outputs the answer string of the highest scoring derivation.
+- <ins>Retriever component</ins>
+  - In order for the retriever to be learnable, we define the retrieval score as the **inner product** of dense vector representations of the question *q* and the evidence block *b*: *h<sub>q</sub>=W<sub>q</sub> BERT<sub>Q</sub>(q)[CLS]* and *h<sub>b</sub>=W<sub>b</sub> BERT<sub>B</sub>(b)[CLS]* so that *S<sub>retr</sub>(b,q)=h<sub>q</sub>.h<sub>b</sub>*
 
-### ICT
+
+## 2. ICT
 
 - In ICT, a sentence is treated as a pseudo-question, and its context is treated as pseudo-evidence. Given a pseudo-question, ICT requires selecting the corresponding pseudo-evidence out of the candidates in a batch.
 - ICT pre-training provides a sufficiently strong initialization such that ORQA can be fine-tuned end-to-end by simply optimizing the marginal log-likelihood of correct answers that were found.
