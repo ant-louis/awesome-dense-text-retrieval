@@ -31,8 +31,10 @@
 - Models define a scoring function *S(b,s,q)* indicating the goodness of an answer derivation *(b,s)* given a question *q*. Typically, this scoring function
 is decomposed over a retrieval component *S<sub>retr</sub>(b,q)* and a reader component *S<sub>read</sub>(b,s,q)*: *S(b,s,q) = S<sub>retr</sub>(b,q) + S<sub>read</sub>(b,s,q)*. Here, all scoring components are derived from **BERT**.
 - During inference, the model outputs the answer string of the highest scoring derivation.
-- <ins>Retriever component</ins>
-  - In order for the retriever to be learnable, we define the retrieval score as the **inner product** of dense vector representations of the question *q* and the evidence block *b*: *h<sub>q</sub>=W<sub>q</sub> BERT<sub>Q</sub>(q)[CLS]* and *h<sub>b</sub>=W<sub>b</sub> BERT<sub>B</sub>(b)[CLS]* so that *S<sub>retr</sub>(b,q)=h<sub>q</sub>.h<sub>b</sub>*
+- <ins>Retriever component</ins>: In order for the retriever to be learnable, we define the retrieval score as the **inner product** of dense vector representations of the question *q* and the evidence block *b*: *h<sub>q</sub>=W<sub>q</sub> BERT<sub>Q</sub>(q)[CLS]* and *h<sub>b</sub>=W<sub>b</sub> BERT<sub>B</sub>(b)[CLS]* so that *S<sub>retr</sub>(b,q)=h<sub>q</sub>.h<sub>b</sub>*
+- <ins>Rader component</ins>: The reader is a span-based variant of the reading comprehension BERT model: *S<sub>read</sub>(b,s,q)=MLP([h<sub>start</sub>;h<sub>end</sub>])*
+- <ins>Learning challenges</ins>: The proposed model is conceptually simple, however, inference and learning are challenging since (1) an open evidence corpus presents an enormous search space (over 13 million evidence blocks), (2) how to navigate this space is entirely latent. They address these challenges by carefully initializing the retriever with unsupervised pre-training.
+
 
 
 ## 2. ICT
