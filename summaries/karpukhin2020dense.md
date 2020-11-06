@@ -44,3 +44,7 @@
     2. BM25: top passages returned by BM25 which don’t contain the answer but match most question tokens;
     3. Gold: positive passages paired with other questions which appear in the training set.
   - Assume that a mini-batch has *B* questions and each one is associated with a relevant passage. Let **Q** and **P** be the *(B x d)* matrix of question and passage embeddings in a batch of size *B*. Then, **S** = **QP** is a *(B x B)* QPT is a matrix of similarity scores, where each row of which corresponds to a question, paired with *B* passages. In this way, they reuse computation and effectively train on *B<sup>2</sup> (qi, pj)* question/passage pairs in each batch.
+
+
+## 2. Experiments
+
