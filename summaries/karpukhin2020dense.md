@@ -1,7 +1,7 @@
-##
+## Dense Passage Retrieval for Open-Domain Question Answering
 
 +++++++++++++++++++++++++++++++  
-<ins>Authors</ins>:  et al.  
+<ins>Authors</ins>: V. Karpukhin et al.  
 <ins>Date</ins>:   
 <ins>Tags</ins>:   
 +++++++++++++++++++++++++++++++  
