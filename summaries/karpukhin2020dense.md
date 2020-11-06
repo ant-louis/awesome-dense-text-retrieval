@@ -30,7 +30,17 @@
 
 ## 1. Dense Passage Retriever (DPR)
 
-### Overview
+- <ins>Overview</ins>
+  - DPR uses two different **dense encoders** (BERT-base networks uncased):
+    1. The passage encoder *E<sub>P</sub>(.)*, which maps any text **passage** to a *d*-dimensional real-valued vectors. The passage encoder is used once to encode all the passages offline, whose representations are then indexed using FAISS.
+    2. The question encoder *E<sub>Q</sub>(.)*, which maps the input **question** to a *d*-dimensional vector. At run-time, the *k* passages of which vectors are the closest to the question vector are retrieved. They define the similarity between the question and the passage using the **dot product** of their vectors (NB: they also tested cosine and L2 distances and all performed similarly, dot product leading to slightly better performance).
+  - For both encoders, the output corresponds to the representation of the [CLS] token.
 
-- DPR uses a dense encoder *E<sub>P</sub>(.)* which maps any text **passage** to a *d*-dimensional real-valued vectors and builds an index for all the *M* passages that we will use for retrieval.
-- At run-time, DPR applies a different encoder *E<sub>Q</sub>(.)* that maps the input **question** to a *d*-dimensional vector and retrieves *k* passages of which vectors are the closest to the question vector, where they define the similarity between the question and the passage using the **dot product** of their vectors: *sim(q,p) = E<sub>Q</sub>(q) E<sub>P</sub>(p)*
+- <ins>Training</ins>
+  - Training the encoders so that the dot-product similarity becomes a good ranking function for retrieval is essentially a **metric learning problem**. The goal is to create a vector space such that relevant pairs of questions and passages will have smaller distance than the irrelevant ones, by learning a better embedding function.
+  - Each training instance contains one question and one relevant (positive) passage along with *n* irrelevant (negative) passages. They then optimize the loss function as the negative log likelihood of the positive passage.
+  - Here, they consider three types of negatives:
+    1. Random: any random passage from the corpus; 
+    2. BM25: top passages returned by BM25 which don’t contain the answer but match most question tokens;
+    3. Gold: positive passages paired with other questions which appear in the training set.
+  - Assume that a mini-batch has *B* questions and each one is associated with a relevant passage. Let **Q** and **P** be the *(B x d)* matrix of question and passage embeddings in a batch of size *B*. Then, **S** = **QP** is a *(B x B)* QPT is a matrix of similarity scores, where each row of which corresponds to a question, paired with *B* passages. In this way, they reuse computation and effectively train on *B<sup>2</sup> (qi, pj)* question/passage pairs in each batch.
