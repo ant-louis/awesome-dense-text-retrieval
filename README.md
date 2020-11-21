@@ -1,5 +1,4 @@
-# Up-to-date NLP
-
+# Neural Information Retrieval
 
 ## 📄  Papers <a name="papers"></a>
 
