@@ -32,7 +32,7 @@
 
 - <ins>Overview</ins>
   - DPR uses two different **dense encoders** (BERT-base networks uncased):
-    1. The passage encoder *E<sub>P</sub>(.)*, which maps any text **passage** to a *d*-dimensional real-valued vectors. The passage encoder is used once to encode all the passages offline, whose representations are then indexed using FAISS.
+    1. The passage encoder *E<sub>P</sub>(.)*, which maps any text **passage** to a *d*-dimensional real-valued vectors. At run-time, the passage encoder is used once to encode all the passages offline, whose representations are then indexed using FAISS.
     2. The question encoder *E<sub>Q</sub>(.)*, which maps the input **question** to a *d*-dimensional vector. At run-time, the *k* passages of which vectors are the closest to the question vector are retrieved. They define the similarity between the question and the passage using the **dot product** of their vectors (NB: they also tested cosine and L2 distances and all performed similarly, dot product leading to slightly better performance).
   - For both encoders, the output corresponds to the representation of the [CLS] token.
 
@@ -44,7 +44,22 @@
     2. BM25: top passages returned by BM25 which don’t contain the answer but match most question tokens;
     3. Gold: positive passages paired with other questions which appear in the training set.
   - Assume that a mini-batch has *B* questions and each one is associated with a relevant passage. Let **Q** and **P** be the *(B x d)* matrix of question and passage embeddings in a batch of size *B*. Then, **S** = **QP** is a *(B x B)* QPT is a matrix of similarity scores, where each row of which corresponds to a question, paired with *B* passages. In this way, they reuse computation and effectively train on *B<sup>2</sup> (qi, pj)* question/passage pairs in each batch.
+  
 
 
 ## 2. Experiments
 
+- <ins>Data</ins>
+  - QA: Natural Questions (NQ), TriviaQA, WebQuestions (WQ), CuratedTREC (TREC), SQuAD v1.1.
+  - Retrieval corpus: used the English Wikipedia dump from Dec. 20, 2018 where each article is split into blocks of 100 words, resulting in ~21M passages. To select the positive passages, because only pairs of questions and answers are provided in TriviaQA, TREC and WebQuestions, they used the highest-ranked passage from BM25 that contains the answer as the positive passage.
+- <ins>Results</ins>
+  - They compared DPR to BM25 and BM25+DPR using a linear combination of their scores as the new ranking function.
+  - With the exception of SQuAD, DPR performs consistently better than BM25 on all datasets (the gap is especially large when *k* is small). Results can be improved further in some cases by combining DPR with BM25.
+  - Probably 2 reasons why performance on SQUAD is lower: (1) the annotators wrote questions after seeing the passage (there is then a high lexical overlap between passages and questions, which gives BM25 a clear advantage); (2) the data was collected from only 500+ Wikipedia articles and thus the distribution of training examples is extremely biased.
+- <ins>Ablation studies</ins>
+  - **Sample efficiency: how many training examples are needed to achieve good passage retrieval performance?**
+    - Result: a dense passage retriever trained using only 1,000 examples already outperforms BM25.
+    - This suggests that with a general pretrained language model, it is possible to train a high-quality dense retriever with a small number of question–passage pairs.
+    - Adding more training examples (from 1k to 59k) further improves the retrieval accuracy consistently.
+
+    
