@@ -47,7 +47,7 @@
   
 
 
-## 2. Experiments
+## 2. Experiments on Passage Retrieval
 
 - <ins>Data</ins>
   - QA: Natural Questions (NQ), TriviaQA, WebQuestions (WQ), CuratedTREC (TREC), SQuAD v1.1.
@@ -61,5 +61,11 @@
     - Result: a dense passage retriever trained using only 1,000 examples already outperforms BM25.
     - This suggests that with a general pretrained language model, it is possible to train a high-quality dense retriever with a small number of question–passage pairs.
     - Adding more training examples (from 1k to 59k) further improves the retrieval accuracy consistently.
+  - **In-batch negative training**: testing different training shcemes.
+    - They found that the choice of negatives — random, BM25 or gold passages (positive passages from other questions) — does not impact the top-k accuracy much in this setting when k > 20.
+    - They also explored in-batch negative training with additional “hard” negative passages that have high BM25 scores given the question, but do not contain the answer string. They found that adding a single BM25 negative passage improves the result substantially while adding two does not help further.
+  - **Similarity and loss**:
+    - Besides **dot product**, **cosine** and **Euclidean L2** distance are also commonly used as decomposable similarity functions. They found that L2 performs comparable to dot product, and both of them are superior to cosine.
+    - In addition to **negative log-likelihood**, a popular option for ranking is **triplet loss**, which compares a positive passage and a negative one directly with respect to a question. Their experiments show that using triplet loss does not affect the results much.
 
     
