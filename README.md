@@ -2,7 +2,9 @@
 
 ## 📄  Papers <a name="papers"></a>
 
-- [`2020-06`] (MARGE) *Pre-training via Paraphrasing*, M. Lewis et al. 😍 [[pdf]](https://arxiv.org/pdf/2006.15020)[[summary]](summaries/lewis2020pretraining.md)
+
+- [`2020-06`] (MARGE) *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*, P. Lewis et al. 😍 [[pdf]](https://arxiv.org/pdf/2005.11401)[[summary]](summaries/lewis2020retrieval.md)
+- [`2020-05`] (RAG) *Pre-training via Paraphrasing*, M. Lewis et al. 😍 [[pdf]](https://arxiv.org/pdf/2006.15020)[[summary]](summaries/lewis2020pretraining.md)
 - [`2020-04`] (DPR) *Dense Passage Retrieval for Open-Domain Question Answering*, V. Karpukhin et al. [[pdf]](https://arxiv.org/pdf/2004.04906)[[summary]](summaries/karpukhin2020dense.md)
 - [`2020-02`] (REALM) *Retrieval-Augmented Language Model Pre-Training*, K. Guu et al. 😍 [[pdf]](https://arxiv.org/pdf/2002.08909)[[summary]](summaries/guu2020realm.md)
 - [`2019-11`] (kNN-LM) *Generalization through Memorization: Nearest Neighbor Language Models*, U. Khandelwal et al. [[pdf]](https://arxiv.org/pdf/1911.00172)[[summary]](summaries/khandelwal2019generalization.md)
