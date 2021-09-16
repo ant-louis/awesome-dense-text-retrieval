@@ -1,9 +1,5 @@
 # Awesome Dense Retrieval
 
-**Curated list of dense retrieval resources from all around the web.**
-
-## Introduction
-
 ## 🗂 Datasets
 
 | Dataset                                                                           | Domain      | Language          |
