@@ -1,9 +1,9 @@
 [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
-![License](https://img.shields.io/github/license/antoiloui/awesome-dense-retrieval)
+![License](https://img.shields.io/github/license/antoiloui/awesome-dense-text-retrieval)
 
-# Awesome Dense Retrieval
+# Awesome Dense Text Retrieval
 
-Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by matching in a continuous representation space learned via neural networks. [[Learn more]](summaries/background.md)
+Dense Text Retrieval (DTR) aims to overcome the limitations of sparse retrieval by matching in a continuous representation space learned via neural networks. [[Learn more]](summaries/background.md)
 
 ## 🗂 Datasets
 
