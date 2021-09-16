@@ -3,7 +3,7 @@
 
 # Awesome Dense Retrieval
 
-Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by matching in a continuous representation space learned via neural networks. [[learn more]](summaries/background.md)
+Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by matching in a continuous representation space learned via neural networks. [[Learn more]](summaries/background.md)
 
 ## 🗂 Datasets
 
