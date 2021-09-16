@@ -29,6 +29,6 @@
 
 ## Tools
 
-- SentenceTransformers:  a Python framework for state-of-the-art sentence, text and image embeddings [[website]](https://www.sbert.net/index.html)
-- Jina AI: a cloud-native neural search framework for any kind of data [[website]](https://docs.jina.ai/)
-- Haystack: an end-to-end neural search framework for textual data [[website]](https://haystack.deepset.ai/overview/intro)
+- SentenceTransformers:  a Python framework for state-of-the-art sentence, text and image embeddings [[documentation]](https://www.sbert.net/index.html)
+- Jina AI: a cloud-native neural search framework for any kind of data [[documentation]](https://docs.jina.ai/)
+- Haystack: an end-to-end neural search framework for textual data [[documentation]](https://haystack.deepset.ai/overview/intro)
