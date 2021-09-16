@@ -1,1 +1,1 @@
-# Dense Retrieval
+# Dense Text Retrieval
