@@ -1,11 +1,15 @@
 # Awesome Dense Retrieval
 
+Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by matching in a continuous representation space learned via neural networks. [[learn more]]()
+
 ## 🗂 Datasets
 
-| Dataset                                                                           | Domain      | Language          |
-| --------------------------------------------------------------------------------- | ----------- | ----------------- |
-| [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/)                      | Law         | English, Japanese |
-| [CAIL2019-SCM](https://github.com/china-ai-law-challenge/CAIL2019/tree/master/scm)| Law         | Chinese           |
+| Dataset                                                              | Domain  | Language(s)       | #Queries   | #Documents |
+|----------------------------------------------------------------------|---------|-------------------|------------|------------|
+| [MS-MARCO](https://microsoft.github.io/msmarco/)                     | General | English           | 1,010,900+ | 8,841,800+ |
+| [Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | English           |    91,500+ |          / |
+| [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/)         | Law     | English, Japanese |        696 |        768 |
+| [BSARD](https://github.com/maastrichtlawtech/bsard)                  | Law     | French            |     1,100+ |    22,600+ |
 
 ## 📚  Courses
 
