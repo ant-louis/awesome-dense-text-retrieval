@@ -8,7 +8,7 @@ Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by mat
 |----------------------------------------------------------------------|---------|-------------------|------------|------------|
 | [MS-MARCO](https://microsoft.github.io/msmarco/)                     | General | English           | 1,010,900+ | 8,841,800+ |
 | [Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | English           |    91,500+ |          / |
-| [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/)         | Law     | English, Japanese |        696 |        768 |
+| [COLIEE](https://sites.ualberta.ca/~rabelo/COLIEE2020/)              | Law     | English, Japanese |        696 |        768 |
 | [BSARD](https://github.com/maastrichtlawtech/bsard)                  | Law     | French            |     1,100+ |    22,600+ |
 
 ## 📄  Papers
