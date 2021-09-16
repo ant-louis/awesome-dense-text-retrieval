@@ -1,3 +1,5 @@
+[![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
+
 # Awesome Dense Retrieval
 
 Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by matching in a continuous representation space learned via neural networks. [[learn more]](summaries/background.md)
