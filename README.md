@@ -19,15 +19,15 @@ Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by mat
 
 ## 📚  Courses
 
-- [`2021`] *Advanced Information Retrieval*, S. Hofstätter. [[materials]](https://github.com/sebastian-hofstaetter/teaching)
+- [`2021`] *Advanced Information Retrieval*, S. Hofstätter. [[materials]](https://github.com/sebastian-hofstaetter/teaching)[[videos]](https://www.youtube.com/watch?v=6FNISntK6Sk&list=PLSg1mducmHTPZPDoal4m59pPxxsceXF-y)
 
 ## 🗓  Conferences & Workshops
 
-- The Special Interest Group on Information Retrieval (SIGIR) [[website]](https://sigir.org/)
-- The Text Retrieval Conference (TREC) workshop [[website]](https://trec.nist.gov/)  
+- The Special Interest Group on Information Retrieval (SIGIR). [[link]](https://sigir.org/)
+- The Text Retrieval Conference (TREC) workshop. [[link]](https://trec.nist.gov/)  
 
 ## ☁️ Tools
 
-- SentenceTransformers:  a Python framework for state-of-the-art sentence, text and image embeddings. [[documentation]](https://www.sbert.net/index.html)
-- Jina AI: a cloud-native neural search framework for any kind of data. [[documentation]](https://docs.jina.ai/)
-- Haystack: an end-to-end neural search framework for textual data. [[documentation]](https://haystack.deepset.ai/overview/intro)
+- SentenceTransformers:  a Python framework for state-of-the-art sentence, text and image embeddings. [[link]](https://www.sbert.net/index.html)
+- Jina AI: a cloud-native neural search framework for any kind of data. [[link]](https://docs.jina.ai/)
+- Haystack: an end-to-end neural search framework for textual data. [[link]](https://haystack.deepset.ai/overview/intro)
