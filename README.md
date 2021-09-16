@@ -23,8 +23,8 @@ Dense Retrieval (DR) aims to overcome the limitations of sparse retrieval by mat
 
 ## 🗓  Conferences & Workshops
 
+- The Text Retrieval Conference (TREC) Deep Learning Track. [[link]](https://microsoft.github.io/msmarco/TREC-Deep-Learning)
 - The Special Interest Group on Information Retrieval (SIGIR). [[link]](https://sigir.org/)
-- The Text Retrieval Conference (TREC) workshop. [[link]](https://trec.nist.gov/)  
 
 ## ☁️ Tools
 
