@@ -22,7 +22,7 @@ Dense Text Retrieval (DTR) aims to overcome the limitations of sparse retrieval 
 
 ## 📚 Courses
 
-- *Advanced Information Retrieval*, S. Hofstätter. [[materials]](https://github.com/sebastian-hofstaetter/teaching)[[videos]](https://www.youtube.com/watch?v=6FNISntK6Sk&list=PLSg1mducmHTPZPDoal4m59pPxxsceXF-y)
+- *Advanced Information Retrieval*, S. Hofstätter. [[slides]](https://github.com/sebastian-hofstaetter/teaching/tree/master/advanced-information-retrieval)[[videos]](https://www.youtube.com/watch?v=6FNISntK6Sk&list=PLSg1mducmHTPZPDoal4m59pPxxsceXF-y)
 
 ## 🎙 Talks
 
