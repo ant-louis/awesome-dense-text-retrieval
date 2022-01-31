@@ -1,1 +1,2 @@
-# Dense Text Retrieval
+## A Brief Introduction to Dense Text Retrieval
+
