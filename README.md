@@ -11,16 +11,16 @@ Dense Text Retrieval (DTR) aims to overcome the limitations of sparse retrieval 
 |---|---|---|---|---|
 | [MS-MARCO](https://microsoft.github.io/msmarco/) | General | 🇬🇧  | 1,010,900+ | 8,841,800+ |
 | [Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | 🇬🇧  | 91,500+ |  |
-| [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/) ([📄](https://sites.ualberta.ca/~rabelo/COLIEE2021/COLIEE_2020_summary.pdf)) | Law | 🇬🇧, 🇯🇵    | 808 | 768 |
-| [BSARD](https://github.com/maastrichtlawtech/bsard) ([📄](https://arxiv.org/abs/2108.11792)) | Law | 🇫🇷  | 1,108 | 22,633 |
+| [📄](https://sites.ualberta.ca/~rabelo/COLIEE2021/COLIEE_2020_summary.pdf) [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/) | Law | 🇬🇧, 🇯🇵    | 808 | 768 |
+| [📄](https://arxiv.org/abs/2108.11792) [BSARD](https://github.com/maastrichtlawtech/bsard) | Law | 🇫🇷  | 1,108 | 22,633 |
 
 ## 🔥 Models
 
 | Model | Language | Size | Year |
 |---|---|---|---|
-| DPR [📄](https://arxiv.org/pdf/2004.04906) | 🇬🇧  |  | 2020 |
-| ORQA [📄](https://arxiv.org/pdf/1906.00300) | 🇬🇧  |  | 2019 |
-| DrQA [📄](https://arxiv.org/pdf/1704.00051.pdf) | 🇬🇧  |  | 2017 |
+| [📄](https://arxiv.org/pdf/2004.04906) DPR | 🇬🇧  |  | 2020 |
+| [📄](https://arxiv.org/pdf/1906.00300) ORQA | 🇬🇧  |  | 2019 |
+| [📄](https://arxiv.org/pdf/1704.00051.pdf) DrQA | 🇬🇧  |  | 2017 |
 
 ## 📚 Courses
 
