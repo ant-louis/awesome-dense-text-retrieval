@@ -9,8 +9,8 @@ Dense Text Retrieval (DTR) aims to overcome the limitations of sparse retrieval 
 
 | Dataset | Domain | Language | #Queries | #Documents |
 |---|---|---|---|---|
-| [MS-MARCO](https://microsoft.github.io/msmarco/) | General | 🇬🇧  | 1,010,900+ | 8,841,800+ |
-| [Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | 🇬🇧  | 91,500+ |  |
+| [📄](https://arxiv.org/abs/1611.09268)[MS-MARCO](https://microsoft.github.io/msmarco/) | General | 🇬🇧  | 1,010,900+ | 8,841,800+ |
+| [📄](https://aclanthology.org/Q19-1026/)[Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | 🇬🇧  | 91,500+ |  |
 | [📄](https://sites.ualberta.ca/~rabelo/COLIEE2021/COLIEE_2020_summary.pdf) [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/) | Law | 🇬🇧, 🇯🇵    | 808 | 768 |
 | [📄](https://arxiv.org/abs/2108.11792) [BSARD](https://github.com/maastrichtlawtech/bsard) | Law | 🇫🇷  | 1,108 | 22,633 |
 
