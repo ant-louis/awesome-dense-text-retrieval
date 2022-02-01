@@ -7,18 +7,20 @@ Dense Text Retrieval (DTR) aims to overcome the limitations of sparse retrieval 
 
 ## 🗂 Datasets
 
-| Dataset                                                              | Domain  | Language(s)       | #Queries   | #Documents |
-|----------------------------------------------------------------------|---------|-------------------|------------|------------|
-| [MS-MARCO](https://microsoft.github.io/msmarco/)                     | General | English           | 1,010,900+ | 8,841,800+ |
-| [Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | English           |    91,500+ |          / |
-| [COLIEE](https://sites.ualberta.ca/~rabelo/COLIEE2020/)              | Law     | English, Japanese |        696 |        768 |
-| [BSARD](https://github.com/maastrichtlawtech/bsard)                  | Law     | French            |     1,100+ |    22,600+ |
+| Dataset | Domain | Language | #Queries | #Documents |
+|---|---|---|---|---|
+| [MS-MARCO](https://microsoft.github.io/msmarco/) | General | 🇬🇧  | 1,010,900+ | 8,841,800+ |
+| [Natural Questions](https://ai.google.com/research/NaturalQuestions) | General | 🇬🇧  | 91,500+ |  |
+| [COLIEE-2020](https://sites.ualberta.ca/~rabelo/COLIEE2020/) ([📄](https://sites.ualberta.ca/~rabelo/COLIEE2021/COLIEE_2020_summary.pdf)) | Law | 🇬🇧, 🇯🇵    | 808 | 768 |
+| [BSARD](https://github.com/maastrichtlawtech/bsard) ([📄](https://arxiv.org/abs/2108.11792)) | Law | 🇫🇷  | 1,108 | 22,633 |
 
-## 📄 Papers
+## 🔥 Models
 
-- `2020-04` (DPR) *Dense Passage Retrieval for Open-Domain Question Answering*, V. Karpukhin et al. [[pdf]](https://arxiv.org/pdf/2004.04906)[[summary]](summaries/karpukhin2020dense.md)
-- `2019-06` (ORQA) *Latent Retrieval for Weakly Supervised Open-Domain Question Answering*, K. Lee et al. [[pdf]](https://arxiv.org/pdf/1906.00300)[[summary]](summaries/lee2019latent.md)
-- `2017-03` (DrQA) *Reading Wikipedia to Answer Open-Domain Questions*, D. Chen et al. [[pdf]](https://arxiv.org/pdf/1704.00051.pdf)[[summary]](summaries/chen2017reading.md)
+| Model | Language | Size | Year |
+|---|---|---|---|
+| DPR [📄](https://arxiv.org/pdf/2004.04906) | 🇬🇧  |  | 2020 |
+| ORQA [📄](https://arxiv.org/pdf/1906.00300) | 🇬🇧  |  | 2019 |
+| DrQA [📄](https://arxiv.org/pdf/1704.00051.pdf) | 🇬🇧  |  | 2017 |
 
 ## 📚 Courses
 
